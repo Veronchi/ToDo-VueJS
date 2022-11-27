@@ -5,7 +5,7 @@
       <input v-model="newTask" type="text" placeholder="Enter your task" class="form-control me-1">
       <button @click="addTask" class="btn btn-warning rounded-1">Add</button>
     </div>
-    <table class="table">
+    <table class="table" v-if="tasks.length">
       <thead class="container">
         <tr class="row">
           <th class="col-8" scope="col">Task</th>
@@ -44,6 +44,9 @@
         </tr>
       </tbody>
     </table>
+    <div v-else class="alert alert-primary" role="alert">
+      No tasks
+    </div>
   </div>
 </template>
 
